@@ -1,0 +1,45 @@
+{
+  "registry_version": "1.1",
+  "templates": {
+    "screen.quote.v1": {
+      "claim_type": "SCREEN_TEXT_OBSERVED",
+      "allowed_source": "SCREEN",
+      "text": "{time_of_day}，我的屏幕记录中出现过“{quoted_text}”这段文字。",
+      "model_bindable_slots": ["quoted_text"],
+      "application_only_slots": ["time_of_day"],
+      "requires_quality": "HIGH"
+    },
+    "audio.quote.v1": {
+      "claim_type": "AUDIO_TEXT_OBSERVED",
+      "allowed_source": "AUDIO",
+      "text": "{time_of_day}，一段语音记录里提到了“{quoted_text}”。",
+      "model_bindable_slots": ["quoted_text"],
+      "application_only_slots": ["time_of_day"],
+      "requires_quality": "HIGH"
+    },
+    "note.quote.v1": {
+      "claim_type": "USER_NOTE_REPORTED",
+      "allowed_source": "USER_NOTE",
+      "text": "我在手记里写道：“{quoted_text}”。",
+      "model_bindable_slots": ["quoted_text"],
+      "application_only_slots": [],
+      "requires_quality": "HIGH"
+    },
+    "system.gap.v1": {
+      "claim_type": "SYSTEM_GAP_RECORDED",
+      "allowed_source": "SYSTEM",
+      "text": "{gap_start} 至 {gap_end}，没有取得{channel_label}记录。原因：{reason_label}。",
+      "model_bindable_slots": [],
+      "application_only_slots": ["gap_start", "gap_end", "channel_label", "reason_label"],
+      "requires_system_metadata_kind": "CAPTURE_GAP"
+    },
+    "system.processing.v1": {
+      "claim_type": "PROCESSING_STATUS",
+      "allowed_source": "SYSTEM",
+      "text": "还有{pending_count}段{channel_label}记录待转换。",
+      "model_bindable_slots": [],
+      "application_only_slots": ["pending_count", "channel_label"],
+      "requires_system_metadata_kind": "PROCESSING_STATUS"
+    }
+  }
+}

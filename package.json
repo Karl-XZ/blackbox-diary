@@ -1,0 +1,7 @@
+{
+  "name": "blackbox-diary-preview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "node server.mjs", "start": "node server.mjs", "check": "node --check dist/app.js" }
+}

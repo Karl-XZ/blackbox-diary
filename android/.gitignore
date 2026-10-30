@@ -1,0 +1,10 @@
+.gradle/
+**/build/
+local.properties
+models/*.litertlm
+models/*.part
+*.jks
+captures/
+tools/model-builder-deps/
+models/stop-token-work/
+tools/semantic-validation-deps/

@@ -1,0 +1,6 @@
+-keep class com.k2fsa.sherpa.onnx.** { *; }
+-keep class ai.onnxruntime.** { *; }
+-keep class com.google.ai.edge.litertlm.** { *; }
+-keep class com.blackbox.diary.inference.SparkSmeBridge { *; }
+-keep class net.zetetic.database.sqlcipher.** { *; }
+-keepattributes Signature,InnerClasses,EnclosingMethod

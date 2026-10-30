@@ -1,0 +1,63 @@
+{
+  "spec_version": "1.1",
+  "platform": {"min_android_api": 34, "primary_ram_gb": 12, "internet_permission": false},
+  "features": {
+    "keyword_search": true, "single_day_markdown_export": true,
+    "single_day_txt_export": true, "natural_language_qa": false,
+    "vector_search": false, "continuous_video": false,
+    "per_app_exclusion": false, "backup_restore": false,
+    "bulk_export": false, "independent_source_retention": false
+  },
+  "capture": {
+    "screen_interval_ms": 5000, "screen_coverage_bucket_ms": 5000,
+    "audio_sample_rate_hz": 16000, "audio_bits_per_sample": 16,
+    "audio_channels": 1, "audio_chunk_ms": 60000,
+    "encrypted_audio_record_ms": 1000, "heartbeat_ms": 5000,
+    "split_on_midnight": true, "split_on_timezone_change": true,
+    "persist_screen_images": false, "protect_own_app_screen": true,
+    "clock_jump_threshold_ms": 2000,
+    "pause_options_minutes": [15, 60], "manual_resume_option": true
+  },
+  "retention": {
+    "raw_media_ttl_ms": 86400000, "retry_may_extend_ttl": false,
+    "cleanup_batch_interval_ms": 60000, "max_cache_chunks": 256,
+    "max_cache_bytes": 536870912, "separate_cache_wrapping_key": true,
+    "whole_day_text_retention_options_days": [30, 90, 365, null],
+    "whole_day_text_retention_default_days": null
+  },
+  "processing": {
+    "max_retries": 3, "retry_delays_ms": [30000, 120000, 600000],
+    "daily_attempt_local_time": "02:00", "exact_alarm_required": false,
+    "window_initial_minutes": 15, "llm_concurrency": 1,
+    "llm_requires_healthy_capture_queue": true,
+    "pause_on_thermal_status": "SEVERE"
+  },
+  "llm": {
+    "model_target": "Spark-X2.5-4B INT4", "thinking_enabled": false,
+    "context_tokens": 4096, "max_total_input_tokens": 2944,
+    "max_output_tokens": 768, "safety_margin_tokens": 384,
+    "plan_repair_retries": 1, "fallback": "ORDERED_VALIDATED_TEMPLATES",
+    "free_form_publication": false, "max_daily_calls_including_repairs": 8,
+    "max_daily_output_tokens": 3072, "max_daily_active_inference_ms": 1200000
+  },
+  "facts": {
+    "source_normalization": "NFC", "offset_unit": "UNICODE_CODE_POINT",
+    "span_semantics": "START_INCLUSIVE_END_EXCLUSIVE",
+    "max_evidence_per_claim": 8, "max_quote_codepoints": 300,
+    "uncalibrated_quality_tier": "REVIEW", "include_review_in_prose_default": false
+  },
+  "deletion": {
+    "pause_capture_for_maintenance": true, "automatic_capture_restart": false,
+    "new_db_space_multiplier": 1.2, "extra_space_reserve_bytes": 268435456,
+    "new_keystore_alias_per_db_generation": true,
+    "require_old_alias_absence_before_completed": true,
+    "copy_old_fts_segments": false, "allow_old_generation_fallback_after_switch": false
+  },
+  "search": {
+    "engine": "FTS5", "tokenizer": "unicode61",
+    "application_cjk_unigrams": true, "application_cjk_bigrams": true,
+    "search_normalization": "NFKC_CASEFOLD", "verify_literal_hits": true,
+    "page_size": 30, "benchmark_event_count": 100000,
+    "warm_cache_p95_target_ms": 1000, "report_cold_cache_separately": true
+  }
+}

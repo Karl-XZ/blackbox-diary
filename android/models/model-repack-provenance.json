@@ -1,0 +1,102 @@
+{
+  "builderVersion": "0.18.0",
+  "upstream": {
+    "file": "Spark-X2.5-4B_int4.litertlm",
+    "bytes": 2482196400,
+    "sha256": "ff4fd431693086e44d3c02c338791c90c7197068b06190e1cc2f6a655d83c4f4"
+  },
+  "derived": {
+    "file": "Spark-X2.5-4B_int4-bbd1.litertlm",
+    "bytes": 2482196400,
+    "sha256": "de80fca7a89c7ccac5301d1525b870a671f8ac0541066ef46b9c9d7e7b1aa146"
+  },
+  "change": "Remove punctuation-prefixed EOS stop sequences; retain EOS token ID 1 and the bare EOS string only",
+  "stopsBefore": [
+    {
+      "tokenStr": " <｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenIds": {
+        "ids": [
+          1
+        ]
+      }
+    },
+    {
+      "tokenStr": "<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": ";<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": "*<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": ":<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": "\"<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": "?<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": "!<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": "]<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": ".<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": ",<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": "'<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": ")<｜end▁of▁sentence｜>"
+    },
+    {
+      "tokenStr": "}<｜end▁of▁sentence｜>"
+    }
+  ],
+  "stopsAfter": [
+    {
+      "tokenIds": {
+        "ids": [
+          1
+        ]
+      }
+    },
+    {
+      "tokenStr": "<｜end▁of▁sentence｜>"
+    }
+  ],
+  "sectionVerification": [
+    {
+      "section": 0,
+      "metadataOnlyStopTokensChanged": true
+    },
+    {
+      "section": 1,
+      "type": "raw HF tokenizer section",
+      "sha256": "7fa28ca62939c404c08ed9347d9c0911ebea57e57242ea0889b3da4af3c4d5ac",
+      "identical": true
+    },
+    {
+      "section": 2,
+      "type": "TFLite weights",
+      "sha256": "d33e51c80c496dd8a59f3e2b78d064f57bd8fe4967565ee8ceca12ce51ee7c9b",
+      "identical": true
+    },
+    {
+      "section": 3,
+      "type": "TFLite weights",
+      "sha256": "da1e33106ede2595e0a69a01ab0c32be6b4861977a92f2b2c0d99ae25a943bb1",
+      "identical": true
+    }
+  ],
+  "license": "Apache-2.0; metadata-only derivative of litert-community/Spark-X2.5-4B"
+}

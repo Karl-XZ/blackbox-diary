@@ -1,0 +1,53 @@
+{
+  "upstream": "https://repo.maven.apache.org/maven2/com/microsoft/onnxruntime/onnxruntime-android/1.21.0/onnxruntime-android-1.21.0.aar",
+  "source_sha256": "8b675e9680b8cc02dca706a5e3b4e35cc8506de5bdf206fdae68081cbd804414",
+  "output_sha256": "b1912bcbbc0fb972692e4747577c5c6ba503335b167170d75ec74152c7349231",
+  "tool": "LIEF 1.0.0-d05b3499b",
+  "purpose": "Separate VLE ORT1.21 core from sherpa ORT1.27.1; neither model nor inference operators are modified.",
+  "patches": [
+    {
+      "entry": "jni/arm64-v8a/libshengjian_onnxruntime.so",
+      "original_sha256": "3b024c4d1e1d4684e03292daeb8b00e2acf6da576879a484e91ce40e7d497561",
+      "patched_sha256": "2e5d3a40bc2fa44a886b1e37c6e042a546cbfd423e3b53b72709e6be5f9797ff",
+      "needed": [
+        "libdl.so",
+        "liblog.so",
+        "libm.so",
+        "libc.so"
+      ]
+    },
+    {
+      "entry": "jni/arm64-v8a/libonnxruntime4j_jni.so",
+      "original_sha256": "4b3ba9fbd5a92241d04a78a86fca75a34e6e207880844261e4f28c86da6d06e0",
+      "patched_sha256": "212b59ffa40bc897cd84b02bd25c4dbc1b80d761ff1b05148093751d3a9f9568",
+      "needed": [
+        "libshengjian_onnxruntime.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    },
+    {
+      "entry": "jni/x86_64/libshengjian_onnxruntime.so",
+      "original_sha256": "6f4390621d1513435b636ac2ae61317a1bdf58a80435cbaabb787252321e3015",
+      "patched_sha256": "4605f1f7de1c7943736976dd84218d181638909a197f0c27a6d6adeea4659005",
+      "needed": [
+        "libdl.so",
+        "liblog.so",
+        "libm.so",
+        "libc.so"
+      ]
+    },
+    {
+      "entry": "jni/x86_64/libonnxruntime4j_jni.so",
+      "original_sha256": "72a48937f9a020a842a96a000955911ab934ce826f0f95c646bc1413a5c0797d",
+      "patched_sha256": "a318ea0ac5076613f4d386ba45ba9683ed4f2b9bed1a6c47dce60b969fd121c6",
+      "needed": [
+        "libshengjian_onnxruntime.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    }
+  ]
+}
